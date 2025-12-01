@@ -2639,20 +2639,20 @@ int ide_init_drive(IDEState *s, IDEDevice *dev, IDEDriveKind kind, Error **errp)
         pstrcpy(s->drive_serial_str, sizeof(s->drive_serial_str), dev->serial);
     } else {
         snprintf(s->drive_serial_str, sizeof(s->drive_serial_str),
-                 "QM%05d", s->drive_serial);
+                 "JP%05d", s->drive_serial);
     }
     if (dev->model) {
         pstrcpy(s->drive_model_str, sizeof(s->drive_model_str), dev->model);
     } else {
         switch (kind) {
         case IDE_CD:
-            strcpy(s->drive_model_str, "QEMU DVD-ROM");
+            strcpy(s->drive_model_str, "DVD-ROM");
             break;
         case IDE_CFATA:
-            strcpy(s->drive_model_str, "QEMU MICRODRIVE");
+            strcpy(s->drive_model_str, "MICRODRIVE");
             break;
         default:
-            strcpy(s->drive_model_str, "QEMU HARDDISK");
+            strcpy(s->drive_model_str, "HARDDISK");
             break;
         }
     }
