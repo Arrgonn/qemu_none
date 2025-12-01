@@ -2635,7 +2635,7 @@ static void scsi_cd_realize(SCSIDevice *dev, Error **errp)
     s->qdev.type = TYPE_ROM;
     s->features |= 1 << SCSI_DISK_F_REMOVABLE;
     if (!s->product) {
-        s->product = g_strdup("QEMU CD-ROM");
+        s->product = g_strdup("CD-ROM");
     }
     scsi_realize(&s->qdev, errp);
 }
